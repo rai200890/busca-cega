@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Operacao {
+public class Transicao {
 
     private HashMap<String, Expression> transicao;
 
-    public Operacao(HashMap<String, String> t) {
+    public Transicao(HashMap<String, String> t) {
         transicao = new HashMap<String, Expression>();
         for (String variavel : t.keySet()) {
             String regra = t.get(variavel);

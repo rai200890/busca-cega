@@ -20,7 +20,7 @@ public class BaseConhecimento {
         regras = new ArrayList<Regra>();
     }
 
-    public void addRegra(String id, PadraoRegra p, Operacao o) {
+    public void addRegra(String id, PadraoRegra p, Transicao o) {
         regras.add(new Regra(id, p, o));
     }
 
