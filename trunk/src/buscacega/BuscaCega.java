@@ -31,15 +31,5 @@ public class BuscaCega {
             System.out.println(regra.getId());
             System.out.println(regra.getOperacao().resultado(estado));
         }
-        //Regra 2
-//        kb = new BaseConhecimento();
-//        operacoes = new HashMap<String, String>();
-//        operacoes.put("x", "x+1");
-//        operacoes.put("y", "x+2");
-//        kb.addRegra(new PadraoRegra("(x>y)"), new Operacao(operacoes));
-//        estado = new HashMap<String, BigDecimal>();
-//        estado.put("x", new BigDecimal(0));
-//        estado.put("y", new BigDecimal(3));
-//        ArrayList<Regra> filtro = kb.getRegras(estado);
     }
 }
