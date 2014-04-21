@@ -10,20 +10,20 @@ public class Regra {
 
     private String id;
     private PadraoRegra padrao;
-    private Operacao operacao;
+    private Transicao transicao;
 
-    public Regra(String id, PadraoRegra padrao, Operacao operacao) {
+    public Regra(String id, PadraoRegra padrao, Transicao Transicao) {
         this.id = id;
         this.padrao = padrao;
-        this.operacao = operacao;
+        this.transicao = Transicao;
     }
 
     public PadraoRegra getPadraoRegra() {
         return this.padrao;
     }
 
-    public Operacao getOperacao() {
-        return this.operacao;
+    public Transicao getTransicao() {
+        return this.transicao;
     }
 
     public String getId() {
