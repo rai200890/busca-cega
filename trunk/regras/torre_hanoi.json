@@ -1,0 +1,35 @@
+{
+    "nome": "torre de hanoi",
+    "estado_inicial":
+            {
+                "tam_d1": 1,
+                "tam_d2": 2,
+                "tam_d3": 3,
+                "loc_d1": 1,
+                "loc_d2": 1,
+                "loc_d3": 1
+            }
+    ,
+    "estados_finais": [
+        {
+            "tam_d1": 1,
+            "tam_d2": 2,
+            "tam_d3": 3,
+            "loc_d1": 1,
+            "loc_d2": 1,
+            "loc_d3": 1
+        }]
+    ,
+    "restricoes": "",
+    "regras": [
+        {
+            "id": "r1->2",
+            "padrao_regra": "tam_d1 < tam_d2",
+            "transicao": {
+            "loc_d1": ""
+            }
+        }
+    ]
+}
+
+
