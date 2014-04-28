@@ -1,0 +1,25 @@
+{
+    "nome": "3 jarras",
+    "estado_inicial":
+            {
+                "j1": 8,
+                "j2": 0,
+                "j3": 0
+            }
+    ,
+    "estados_finais": [{
+            "j1": 4,
+            "j2": 4,
+            "j3": 0
+        }],
+    "restricoes": "j1 <= 8 && j2 <= 5 && j3 <= 3 && ((j1+j2+j3) == 8)",
+    "regras": [
+        {
+            "id": "r1",
+            "padrao_regra": "",
+            "transicao": ""
+        }
+    ]
+}
+
+
