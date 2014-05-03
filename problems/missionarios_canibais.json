@@ -1,0 +1,71 @@
+{
+    "nome": "Missionários e Canibais",
+    "estado_inicial": "1",
+    "estados_finais": ["16"],
+    "estados": [
+        {
+            "id": "1",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 3,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 0,
+                    "barco": false
+                }
+            },
+            "sucessores": ["2", "3", "4"]
+        },
+        {
+            "id": "2",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 1,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 2,
+                    "barco": true
+                }
+            },
+            "sucessores": ["5"]
+        },
+        {
+            "id": "3",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 2,
+                    "canibais": 2,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 1,
+                    "canibais": 1,
+                    "barco": true
+                }
+            },
+            "sucessores": ["5"]
+        },
+        {
+            "id": "4",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 2,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 1,
+                    "barco": true
+                }
+            },
+            "sucessores": []
+        }
+    ]
+}
