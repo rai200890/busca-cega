@@ -33,7 +33,7 @@
                     "barco": true
                 }
             },
-            "sucessores": ["5"]
+            "sucessores": ["5","1"]
         },
         {
             "id": "3",
@@ -49,7 +49,7 @@
                     "barco": true
                 }
             },
-            "sucessores": ["5"]
+            "sucessores": ["5","1"]
         },
         {
             "id": "4",
@@ -65,7 +65,199 @@
                     "barco": true
                 }
             },
-            "sucessores": []
+            "sucessores": ["1"]
+        },
+        {
+            "id": "5",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 2,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 1,
+                    "barco": false
+                }
+            },
+            "sucessores": ["6","2","3"]
+        },
+        {
+            "id": "6",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 0,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 3,
+                    "barco": true
+                }
+            },
+            "sucessores": ["7","5"]
+        },
+        {
+            "id": "7",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 3,
+                    "canibais": 1,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 0,
+                    "canibais": 2,
+                    "barco": false
+                }
+            },
+            "sucessores": ["8","6"]
+        },
+        {
+            "id": "8",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 1,
+                    "canibais": 1,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 2,
+                    "canibais": 2,
+                    "barco": true
+                }
+            },
+            "sucessores": ["9","7"]
+        },
+        {
+            "id": "9",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 2,
+                    "canibais": 2,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 1,
+                    "canibais": 1,
+                    "barco": false
+                }
+            },
+            "sucessores": ["10","8"]
+        },
+        {
+            "id": "10",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 2,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 1,
+                    "barco": true
+                }
+            },
+            "sucessores": ["11","9"]
+        },
+        {
+            "id": "11",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 3,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 0,
+                    "barco": false
+                }
+            },
+            "sucessores": ["12","10"]
+        },
+        {
+            "id": "12",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 1,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 2,
+                    "barco": true
+                }
+            },
+            "sucessores": ["13", "14","11"]
+        },
+        {
+            "id": "13",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 2,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 1,
+                    "barco": false
+                }
+            },
+            "sucessores": ["16","12"]
+        },
+        {
+            "id": "14",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 1,
+                    "canibais": 1,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 2,
+                    "canibais": 2,
+                    "barco": false
+                }
+            },
+            "sucessores": ["16","12"]
+        },
+        {
+            "id": "15",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 1,
+                    "barco": true
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 2,
+                    "barco": false
+                }
+            },
+            "sucessores": ["16"]
+        },
+        {
+            "id": "16",
+            "representacao": {
+                "margem_esquerda": {
+                    "missionarios": 0,
+                    "canibais": 0,
+                    "barco": false
+                },
+                "margem_direita": {
+                    "missionarios": 3,
+                    "canibais": 3,
+                    "barco": true
+                }
+            },
+            "sucessores": ["15"]
         }
     ]
 }
