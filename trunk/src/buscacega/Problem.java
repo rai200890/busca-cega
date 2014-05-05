@@ -76,7 +76,7 @@ public class Problem {
     }
 
     public static void main(String[] args) {
-        Problem parser = new Problem("missionarios_canibais.json");
+        Problem parser = new Problem("torre_hanoi.json");
         JSONObject problem = parser.getProblem();
         System.out.println(parser.getState("1"));
         System.out.println(parser.getInitialState());
