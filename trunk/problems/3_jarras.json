@@ -1,0 +1,15 @@
+{
+    "nome": "3 jarras",
+    "estado_inicial": "1",
+    "estados_finais": ["7", "9"],
+    "estados": [
+        {
+            "id": "1",
+            "representacao": {
+                
+            },
+            "sucessores": ["3","13"]
+        }
+    ]
+}
+
