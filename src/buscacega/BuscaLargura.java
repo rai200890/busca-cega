@@ -15,6 +15,6 @@ import org.json.simple.JSONObject;
 public class BuscaLargura {
 
     private static void buscar(Problem p) {
-   
+     Problem p1 = new Problem("torre_hanoi.json");
     }
 }
