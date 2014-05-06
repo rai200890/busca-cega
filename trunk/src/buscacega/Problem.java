@@ -1,3 +1,4 @@
+package buscacega;
 
 import java.io.File;
 import java.io.FileNotFoundException;

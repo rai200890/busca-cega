@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package buscacega;
 
 import java.util.LinkedList;
@@ -14,7 +9,7 @@ import org.json.simple.JSONObject;
  */
 public class BuscaLargura {
 
-    private static void buscar(Problem p) {
-     Problem p1 = new Problem("torre_hanoi.json");
+    public void buscar(Problem p){
+     
     }
 }
