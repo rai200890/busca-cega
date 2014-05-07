@@ -23,27 +23,22 @@ public class BuscaLargura {
             id = open.pollFirst();
             closed.add(id);
             estado = p.getState(id);
-            System.out.println("Estado Atual:");
-            System.out.println(estado.get("representacao"));
+            System.out.println(">> Estado Atual = " + estado.get("representacao"));
             sucessores = (JSONArray) estado.get("sucessores");
             Iterator<String> iterator = sucessores.iterator();
             String stateId;
             while (iterator.hasNext()) {
                 stateId = iterator.next();
                 if (p.belongsToFinalStates(stateId)) {
-                    System.out.println("Estado Final");
-                    System.out.println(p.getState(stateId).get("representacao"));
-                    System.out.println("Fim da busca!!!");
+                    System.out.println(">> Estado Final = " + p.getState(stateId).get("representacao"));
                     return;
                 }
                 if (!closed.contains(stateId) && !open.contains(stateId)) {
                     open.addLast(stateId);
                 }
             }
-            System.out.println("Lista Open:");
-            System.out.println(open);
-            System.out.println("Lista Closed:");
-            System.out.println(closed);
+            System.out.println("open = " + open);
+            System.out.println("closed = "+ closed);
         }
         if (open.isEmpty()) {
             System.out.println("Não há solução.");
@@ -51,7 +46,7 @@ public class BuscaLargura {
     }
 
     public static void main(String[] args) {
-        Problem p = new Problem("3_jarras.json");
+        Problem p = new Problem("torre_hanoi.json");
         System.out.println("Busca Largura");
         buscar(p);
     }
