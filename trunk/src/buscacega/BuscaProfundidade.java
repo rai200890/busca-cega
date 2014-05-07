@@ -9,7 +9,7 @@ import org.json.simple.JSONObject;
  *
  * @author raissa
  */
-public class BuscaLargura {
+public class BuscaProfundidade {
 
     public static void buscar(Problem p) {
         LinkedList<String> open, closed;
@@ -37,7 +37,7 @@ public class BuscaLargura {
                     return;
                 }
                 if (!closed.contains(stateId) && !open.contains(stateId)) {
-                    open.addLast(stateId);
+                    open.addFirst(stateId);
                 }
             }
             System.out.println("Lista Open:");
@@ -51,8 +51,8 @@ public class BuscaLargura {
     }
 
     public static void main(String[] args) {
-        Problem p = new Problem("3_jarras.json");
-        System.out.println("Busca Largura");
+        Problem p = new Problem("torre_hanoi.json");
+        System.out.println("Busca Profundidade");
         buscar(p);
     }
 }
