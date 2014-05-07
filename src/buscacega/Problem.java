@@ -48,11 +48,11 @@ public class Problem {
     }
     
     public boolean belongsToFinalStates(String stateId) {
-        Iterator<JSONObject> iterator = getFinalStates().iterator();
-        JSONObject state;
+        Iterator<String> iterator = getFinalStates().iterator();
+        String state;
         while (iterator.hasNext()) {
             state = iterator.next();
-            if (state.get("id").equals(stateId)) return true;
+            if (state.equals(stateId)) return true;
         }
         return false;
     }
