@@ -8,16 +8,13 @@ package pkg14.pedras;
 /**
  *
  * @author raissa
- *
  */
-public class Problema14Pedras {
+public class Posicao {
+    int x;
+    int y;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Jogo jogo = new Jogo();
-        System.out.print(jogo);
+    public Posicao(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
-
 }
