@@ -12,6 +12,7 @@ import java.util.HashMap;
  *
  * @author Raissa2
  */
+
 public class BaseConhecimento {
 
     ArrayList<Regra> regras;
