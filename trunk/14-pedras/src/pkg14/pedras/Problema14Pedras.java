@@ -10,7 +10,7 @@ package pkg14.pedras;
  *
  * @author raissa
  */
-public class Pedras {
+public class Problema14Pedras {
 
     /**
      * @param args the command line arguments
