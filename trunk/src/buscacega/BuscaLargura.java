@@ -30,7 +30,14 @@ public class BuscaLargura {
             while (iterator.hasNext()) {
                 stateId = iterator.next();
                 if (p.belongsToFinalStates(stateId)) {
+                    System.out.println("#########################################");
                     System.out.println(">> Estado Final = " + p.getState(stateId).get("representacao"));
+                    System.out.println("#########################################");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
                     return;
                 }
                 if (!closed.contains(stateId) && !open.contains(stateId)) {
