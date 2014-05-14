@@ -230,9 +230,14 @@ public class InterfaceGUI extends javax.swing.JFrame {
                 System.out.println("############################################");
                 System.out.println("Maridos Ciumentos");
                 if(alg == BREADTH){
-                    
+                    Problem p = new Problem("3maridos_ciumentos.json");
+                    System.out.println("Busca Largura");
+                    BuscaLargura.buscar(p);
                 }else{
                     if(alg == DEPTH){
+                        Problem p = new Problem("3maridos_ciumentos.json");
+                        System.out.println("Busca Profundidade");
+                        BuscaProfundidade.buscar(p);
                     }else{
                         JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
                     }
