@@ -26,7 +26,7 @@ public class InterfaceGUI extends javax.swing.JFrame {
         this.arquivos_problema = new HashMap<Integer, String>();
         this.arquivos_problema.put(TORRE_HANOI, "torre_hanoi.json");
         this.arquivos_problema.put(MISSIONAIRIES, "missionarios_canibais.json");
-        this.arquivos_problema.put(POTS, "3jarras.json");
+        this.arquivos_problema.put(POTS, "3_jarras.json");
         this.arquivos_problema.put(HUSBANDS, "3maridos_ciumentos.json");
         initComponents();
     }
