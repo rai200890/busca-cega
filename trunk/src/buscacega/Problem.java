@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.LinkedList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -23,6 +22,10 @@ public class Problem {
 
     public JSONObject getProblem() {
         return this.problem;
+    }
+    
+     public String getNome() {
+        return (String) this.problem.get("nome");
     }
     
     public String getInitialState() {
@@ -74,14 +77,6 @@ public class Problem {
             System.out.println("O arquivo está em um formato inválido!");
         }
         return problem;
-    }
-
-    public static void main(String[] args) {
-        Problem parser = new Problem("torre_hanoi.json");
-        JSONObject problem = parser.getProblem();
-        System.out.println(parser.getState("1"));
-        System.out.println(parser.getInitialState());
-        System.out.println(parser.getFinalStates());
     }
 
 }
