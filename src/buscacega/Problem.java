@@ -15,6 +15,7 @@ public class Problem {
     private String filename;
     private JSONObject problem;
 
+    //Inicializa as variaveis filename e problem da classe.
     public Problem(String filename) {
         this.filename = filename;
         this.problem = parseProblem(filename);
@@ -60,7 +61,7 @@ public class Problem {
         return false;
     }
     
-
+    //Leitura do arquivo JSON do problema
     private JSONObject parseProblem(String filename) {
         JSONObject problem = null;
         JSONParser parser = new JSONParser();

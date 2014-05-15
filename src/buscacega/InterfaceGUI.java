@@ -6,22 +6,24 @@ import javax.swing.AbstractButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Robson
- */
 public class InterfaceGUI extends javax.swing.JFrame {
-
+    
+    //Define as constantes da interface
+    //
+    //Constantes de problemas 
     public static final int TORRE_HANOI = 1;
     public static final int MISSIONAIRIES = 2;
     public static final int POTS = 3;
     public static final int HUSBANDS = 4;
 
+    //Constante de algoritmos 
     public static final int DEPTH = 10;
     public static final int BREADTH = 20;
 
+    //HashMap que contem o nome dos arquivos dos problemas
     private HashMap<Integer, String> arquivos_problema;
 
+    //Inicializa o HashMap associando os problemas com seus respectivos ids
     public InterfaceGUI() {
         this.arquivos_problema = new HashMap<Integer, String>();
         this.arquivos_problema.put(TORRE_HANOI, "torre_hanoi.json");
@@ -109,33 +111,35 @@ public class InterfaceGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 15, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rBdepth)
+                                .addGap(18, 18, 18)
+                                .addComponent(rBbreadth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bRun))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rBhanoi)
+                                .addGap(18, 18, 18)
+                                .addComponent(rBmissionairy)
+                                .addGap(0, 0, 0)
+                                .addComponent(rBpots)
+                                .addGap(18, 18, 18)
+                                .addComponent(rBhusband)))
+                        .addGap(250, 250, 250))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2)
                         .addContainerGap())
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(rBdepth)
-                            .addGap(18, 18, 18)
-                            .addComponent(rBbreadth)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bRun)
-                            .addGap(29, 29, 29))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblProblem)
-                                .addComponent(lblAlgorithm)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(rBhanoi)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(rBmissionairy)
-                                    .addGap(0, 0, 0)
-                                    .addComponent(rBpots)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(rBhusband)))
-                            .addGap(107, 107, 107)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAlgorithm)
+                            .addComponent(lblProblem))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,14 +153,14 @@ public class InterfaceGUI extends javax.swing.JFrame {
                     .addComponent(rBpots)
                     .addComponent(rBhusband))
                 .addGap(36, 36, 36)
-                .addComponent(lblAlgorithm)
+                .addComponent(lblAlgorithm, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rBdepth)
                     .addComponent(rBbreadth)
                     .addComponent(bRun))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -177,7 +181,8 @@ public class InterfaceGUI extends javax.swing.JFrame {
         int alg, problem_id;
         alg = 0;
         problem_id = 0;
-
+        
+        //Pega a opção de problema selecionada na interface
         Enumeration elements = bGProblem.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = (AbstractButton) elements.nextElement();
@@ -185,7 +190,8 @@ public class InterfaceGUI extends javax.swing.JFrame {
                 problem_id = Integer.parseInt((String) button.getName());
             }
         }
-
+        
+        //Pega a opção de algoritmo selecionada na interface
         elements = bGAlgorithm.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = (AbstractButton) elements.nextElement();
@@ -193,27 +199,37 @@ public class InterfaceGUI extends javax.swing.JFrame {
                 alg = Integer.parseInt((String) button.getName());
             }
         }
-
+        
+        //Validação 
+        //Caso não tenha selecionado um problema
         if (problem_id == 0) {
             JOptionPane.showMessageDialog(null, "Por favor escolha um problema");
         }
+        
+        //Caso não tenha selecionado um algoritmo
         if (alg == 0) {
             JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
         }
+        
         if (problem_id != 0 && alg != 0) {
+            //Pega o nome do arquivo correspondente no HashMap
             String arquivo = this.arquivos_problema.get(problem_id);
             String resposta = "";
             if (arquivo != null) {
+                //Inicializa o problema a ser resolvido
                 Problem p = new Problem(arquivo);
                 jTA_Output.setText("");
                 jTA_Output.append("############################################ \n");
                 jTA_Output.append(p.getNome() + "\n");
                 if (alg == BREADTH) {
+                    //Executa a busca em largura
                     resposta += BuscaLargura.buscar(p);
                 }
                 if (alg == DEPTH) {
+                    //Executa a busca em profundidade
                     resposta = BuscaProfundidade.buscar(p);
                 }
+                //Coloca a resposta do algoritmo no JTextArea
                 jTA_Output.append(resposta);
             } else {
                 JOptionPane.showMessageDialog(null, "Não existe mapeamento para esse problema!");
