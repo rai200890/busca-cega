@@ -51,10 +51,4 @@ public class BuscaLargura {
             System.out.println("Não há solução.");
         }
     }
-
-    public static void main(String[] args) {
-        Problem p = new Problem("torre_hanoi.json");
-        System.out.println("Busca Largura");
-        buscar(p);
-    }
 }

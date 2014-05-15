@@ -1,7 +1,7 @@
-
 package buscacega;
 
 import java.util.Enumeration;
+import java.util.HashMap;
 import javax.swing.AbstractButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -11,19 +11,26 @@ import javax.swing.JOptionPane;
  * @author Robson
  */
 public class InterfaceGUI extends javax.swing.JFrame {
-    
+
     public static final int TORRE_HANOI = 1;
     public static final int MISSIONAIRIES = 2;
     public static final int POTS = 3;
     public static final int HUSBANDS = 4;
-    
+
     public static final int DEPTH = 10;
     public static final int BREADTH = 20;
-    
+
+    private HashMap<Integer, String> arquivos_problema;
+
     public InterfaceGUI() {
+        this.arquivos_problema = new HashMap<Integer, String>();
+        this.arquivos_problema.put(TORRE_HANOI, "torre_hanoi.json");
+        this.arquivos_problema.put(MISSIONAIRIES, "missionarios_canibais.json");
+        this.arquivos_problema.put(POTS, "3jarras.json");
+        this.arquivos_problema.put(HUSBANDS, "3maridos_ciumentos.json");
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -154,100 +161,45 @@ public class InterfaceGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_rBhanoiActionPerformed
 
     private void bRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRunActionPerformed
-        int alg,problem;
-        problem = 0;
+        int alg, problem_id;
         alg = 0;
-        
+        problem_id = 0;
+
         Enumeration elements = bGProblem.getElements();
         while (elements.hasMoreElements()) {
-          AbstractButton button = (AbstractButton)elements.nextElement();
-          if (button.isSelected()) {
-            problem = Integer.parseInt((String) button.getName());
-          }
+            AbstractButton button = (AbstractButton) elements.nextElement();
+            if (button.isSelected()) {
+                problem_id = Integer.parseInt((String) button.getName());
+            }
         }
-        
+
         elements = bGAlgorithm.getElements();
         while (elements.hasMoreElements()) {
-          AbstractButton button = (AbstractButton)elements.nextElement();
-          if (button.isSelected()) {
-            alg = Integer.parseInt((String) button.getName());
-          }
+            AbstractButton button = (AbstractButton) elements.nextElement();
+            if (button.isSelected()) {
+                alg = Integer.parseInt((String) button.getName());
+            }
         }
-        
-        switch(problem){
-            case TORRE_HANOI:
-                System.out.println("############################################");
-                System.out.println("Torre de Hanoi");
-                if(alg == BREADTH){
-                    Problem p = new Problem("torre_hanoi.json");
-                    System.out.println("Busca Largura");
-                    BuscaLargura.buscar(p);
-                }else{
-                    if(alg == DEPTH){
-                        Problem p = new Problem("torre_hanoi.json");
-                        System.out.println("Busca Profundidade");
-                        BuscaProfundidade.buscar(p);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
-                    }
+
+        String arquivo = this.arquivos_problema.get(problem_id);
+        if (arquivo != null) {
+            Problem p = new Problem(arquivo);
+            System.out.println("############################################");
+            System.out.println(p.getNome());
+            if (alg == BREADTH) {
+                System.out.println("Busca Largura");
+                BuscaLargura.buscar(p);
+            } else {
+                if (alg == DEPTH) {
+                    System.out.println("Busca Profundidade");
+                    BuscaProfundidade.buscar(p);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
                 }
-                break;
-            case MISSIONAIRIES:
-                System.out.println("############################################");
-                System.out.println("Missionarios e canibais");
-                if(alg == BREADTH){
-                    Problem p = new Problem("missionarios_canibais.json");
-                    System.out.println("Busca Largura");
-                    BuscaLargura.buscar(p);
-                }else{
-                    if(alg == DEPTH){
-                        Problem p = new Problem("missionarios_canibais.json");
-                        System.out.println("Busca Profundidade");
-                        BuscaProfundidade.buscar(p);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
-                    }
-                }
-                break;
-            case POTS:
-                System.out.println("############################################");
-                System.out.println("3 Jarras");
-                if(alg == BREADTH){
-                    Problem p = new Problem("3_jarras.json");
-                    System.out.println("Busca Largura");
-                    BuscaLargura.buscar(p);
-                }else{
-                    if(alg == DEPTH){
-                        Problem p = new Problem("3_jarras.json");
-                        System.out.println("Busca Profundidade");
-                        BuscaProfundidade.buscar(p);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
-                    }
-                }
-                break;
-            case HUSBANDS:
-                System.out.println("############################################");
-                System.out.println("Maridos Ciumentos");
-                if(alg == BREADTH){
-                    Problem p = new Problem("3maridos_ciumentos.json");
-                    System.out.println("Busca Largura");
-                    BuscaLargura.buscar(p);
-                }else{
-                    if(alg == DEPTH){
-                        Problem p = new Problem("3maridos_ciumentos.json");
-                        System.out.println("Busca Profundidade");
-                        BuscaProfundidade.buscar(p);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Por favor escolha um algoritmo");
-                    }
-                }
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Por favor escolha um problema");
-                break;
+            }
+        } else {
+            System.out.println("Não existe mapeamento para esse problema!");
         }
-        
     }//GEN-LAST:event_bRunActionPerformed
 
     private void rBmissionairyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBmissionairyActionPerformed
@@ -262,7 +214,7 @@ public class InterfaceGUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new InterfaceGUI();
-                frame.setLocationRelativeTo ( null );
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
         });
